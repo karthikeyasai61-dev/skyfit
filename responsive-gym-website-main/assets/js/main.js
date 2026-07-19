@@ -17,6 +17,15 @@ if(navClose){
     })
 }
 
+/* Close menu when clicking outside on mobile */
+document.addEventListener('click', (e) => {
+    if(navMenu && navMenu.classList.contains('show-menu')) {
+        if(!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
+            navMenu.classList.remove('show-menu')
+        }
+    }
+})
+
 /*=============== REMOVE MENU MOBILE ===============*/
 const navLink = document.querySelectorAll('.nav__link')
 
